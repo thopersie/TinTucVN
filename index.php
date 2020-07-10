@@ -102,8 +102,8 @@ else
             </div>
             <div class="bot3">
                 
-                     <p><a href="#">NewsVN tuyển dụng</a>  / <a href="#">Liên hệ quảng cáo</a> / <a href="#">Liên hệ Tòa soạn</a></p>
-                     <p><a href="#" target="_blank" style="color: #686E7A;font: 11px arial;padding: 0 4px;text-decoration: none;">Thông tin Tòa soạn: </a><span>024.888.68688</span> (HN) - <span>028.666.58588</span> (TP HCM)</p>
+                     
+                     <p><a href="#" target="_blank" style="color: #686E7A;font: 11px arial;padding: 0 4px;text-decoration: none;">Liên hệ Tòa soạn: </a><span>024.888.68688</span> (HN) - <span>028.666.58588</span> (TP HCM)</p>
                   
             </div>
         </div>

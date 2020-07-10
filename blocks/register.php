@@ -6,12 +6,12 @@
       <td>&nbsp;</td>
     </tr>
     <tr>
-      <td>Username</td>
+      <td>Tên</td>
       <td><label for="txtUsername"></label>
       <input type="text" name="txtUsername" id="txtUsername" size="16"></td>
     </tr>
     <tr>
-      <td>Password</td>
+      <td>Mật khẩu</td>
       <td><label for="txtPassword"></label>
       <input type="password" name="txtPassword" id="txtPassword" size="17"></td>
     </tr>
