@@ -7,8 +7,32 @@ if (isset($_GET["p"]))
 else
 	$p="";
 ?>
-
-
+<?php
+$con=mysqli_connect("localhost", "root", "", "tintucvn");
+if(isset($_POST['btnDangnhap'])){
+	$n = mysqli_real_escape_string($con,$_POST['txtUser']);
+	$p = mysqli_real_escape_string($con,$_POST['txtPass']);
+	$p = md5($p);
+	$sql = "SELECT * FROM users WHERE Username = '$n' AND Password = '$p'";
+	$query = mysqli_query($con,$sql);
+	$numrow = mysqli_num_rows($query);
+	if($numrow != 0){
+		$row = mysqli_fetch_array($query);
+		$_SESSION["idUser"]= $row['idUser'];
+		$_SESSION["Username"]= $row['Username'];
+		$_SESSION["HoTen"]= $row['HoTen'];
+	}else{
+		echo("Tên hoặc mật khẩu không đúng");
+	}
+}
+?>
+<?php
+if(isset($_POST['btnThoat'])){
+	unset($_SESSION["idUser"]);
+	unset($_SESSION["Username"]);
+	unset($_SESSION["HoTen"]);
+}
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -72,9 +96,15 @@ else
         </div>
         <div id="content-right">
 		<!--blocks/cot_phai.php-->
-        <?php require "blocks/login.php"?>
-        --------------------------------------------------
-        <?php require "blocks/register.php" ?>
+        
+        <?php if(!isset($_SESSION["idUser"])){
+				  require ("blocks/login.php");
+			  }
+			  else{
+			  	  require("blocks/hello.php");
+			  }
+		?>
+        
         <?php require "blocks/cot_phai.php" ?>
         </div>
 

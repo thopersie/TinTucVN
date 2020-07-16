@@ -1,0 +1,7 @@
+/* CSS Document */
+
+#hangTieuDe{background-color:#09C; color:#FFF; font-size:18px; padding:10px}
+
+#menu a{width:150px; padding:10px; background-color:#036; color:#FFF; font-weight:bold;
+display:block; float:left; text-align:center}
+#menu a:hover{background-color:#666}

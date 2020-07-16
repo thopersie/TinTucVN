@@ -21,20 +21,4 @@
     </tr>
   </table>
 </form>
-<?php
-$con=mysqli_connect("localhost", "root", "", "tintucvn");
-if(isset($_POST['btnDangnhap'])){
-	$n = mysqli_real_escape_string($con,$_POST['txtUser']);
-	$p = mysqli_real_escape_string($con,$_POST['txtPass']);
-	$p = md5($p);
-	$sql = "SELECT * FROM users WHERE Username = '$n' AND Password = '$p'";
-	$query = mysqli_query($con,$sql);
-	$numrow = mysqli_num_rows($query);
-	if($numrow != 0){
-		echo("Đăng nhập thành công");
-	}else{
-		echo("Tên hoặc mật khẩu không đúng");
-	}
-}
-?>
 </div>
